@@ -104,8 +104,6 @@ jobs:
             type=raw,value=latest,enable=${{ endsWith(github.ref, 'main') || endsWith(github.ref, 'master') }}
             type=ref,event=branch,enable=${{ !endsWith(github.ref, 'main') && !endsWith(github.ref, 'master') }}
             type=semver,pattern={{version}}
-          flavor: |
-            latest=false
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
